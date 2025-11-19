@@ -19,12 +19,6 @@ def fetch_news():
 
     articles = []
     for entry in feed.entries:
-        # published がない場合もあるので try/except で安全に
-        try:
-            published_at = entry.published
-        except AttributeError:
-            published_at = None
-
         raw_description = getattr(entry, "summary", "")
         soup = BeautifulSoup(raw_description, "html.parser")
 
@@ -34,7 +28,6 @@ def fetch_news():
         articles.append({
             "title": entry.title,
             "description": description_list,
-            "published_at": published_at,
         })
 
     return articles
