@@ -28,7 +28,7 @@ SECRET_KEY = "django-insecure-6%*3)myah=mcy_)smfy%(=f$^npijzf%^p)$b$!==dl5d4yg2h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['render-project-django-getnews.onrender.com']
 
 
 # Application definition
