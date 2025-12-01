@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 
 load_dotenv()  # .env を読み込む
 
-def send_line_message(text: str):
+def send_message(text: str):
     channel_access_token = os.getenv("LINE_CHANNEL_ACCESS_TOKEN")
     user_id = os.getenv("LINE_USER_ID")
 

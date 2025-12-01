@@ -13,7 +13,7 @@ import json
 CHANNEL_ACCESS_TOKEN = "ここにチャネルアクセストークン（長期）"
 YOUR_USER_ID = "ここにあなたのユーザーID"
 
-def send_line_message(message: str):
+def send_message(message: str):
     url = "https://api.line.me/v2/bot/message/push"
     headers = {
         "Content-Type": "application/json",

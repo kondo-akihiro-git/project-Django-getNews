@@ -1,6 +1,6 @@
 # api/line/formatter.py
 
-def format_news_message(article_summaries: dict) -> str:
+def format_message(article_summaries: dict) -> str:
     """
     ニュースメッセージ整形
     """
