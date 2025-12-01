@@ -1,6 +1,9 @@
+# api/views.py
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
 from rest_framework import status
+from api.line.formatter import format_news_message
+from api.line.line import send_line_message
 from api.service.news import fetch_news
 from api.service.summary import getSummary
 
@@ -39,5 +42,18 @@ def get_news(request):
             status=status.HTTP_502_BAD_GATEWAY
         )
 
-    print("要約生成したニュース取得完了")
-    return Response(article_summaries, status=status.HTTP_200_OK)
+   # LINE 送信準備
+    print("LINEメッセージ整形中")
+    formatted_message = format_news_message(article_summaries)
+
+    # LINE送信
+    print("LINE送信開始")
+    success = send_line_message(formatted_message)
+
+    return Response(
+        {
+            "result": "ok" if success else "line_send_failed",
+            "summaries": article_summaries
+        },
+        status=status.HTTP_200_OK
+    )
