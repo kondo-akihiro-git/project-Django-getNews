@@ -3,11 +3,12 @@
 **ニュース取得API** は、Googleニュースから最新記事を取得し、生成AIで要約して LINE に自動送信するためのミニマルな通知システムです。AWS Lambda と EventBridge を利用し、毎日自動でニュースを受け取ることができます。
 
 <kbd>
-<img width="420" height="820" alt="sample" src="https://github.com/user-attachments/assets/1c2f2a11-aaaa-bbbb-cccc-111122223333" />
+<img width="778" height="287" alt="スクリーンショット 2025-12-02 19 59 02" src="https://github.com/user-attachments/assets/69477807-46c0-4646-bd75-e4ffbc73348e" />
 </kbd>
 </br></br>
 
 ## 特徴
+
 
 - Googleニュース から最新ニュースを取得
 - Gemini API によるニュースの要約生成
